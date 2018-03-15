@@ -19,10 +19,10 @@ namespace pruebaMvc01.Controllers
         // GET: Product
         public ActionResult Index()
         {
-            //string currentUserId = User.Identity.GetUserId();
-            //var userProducts = db.Products.Where(p => p.UserId == currentUserId).ToList();
-            //return View(userProducts);
-            return View(db.Products.ToList());
+            string currentUserId = User.Identity.GetUserId();
+            var userProducts = db.Products.Where(p => p.UserId == currentUserId).ToList();
+            return View(userProducts);
+            //return View(db.Products.ToList());
         }
 
         // GET: Product/Details/5
@@ -33,7 +33,8 @@ namespace pruebaMvc01.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Product product = db.Products.Find(id);
-            if (product == null)
+            string currentUserId = User.Identity.GetUserId();
+            if ((product.UserId != currentUserId) || (product == null))
             {
                 return HttpNotFound();
             }
@@ -53,6 +54,9 @@ namespace pruebaMvc01.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ProductID,Description,Brand,Quantity,Price")] Product product)
         {
+            string currentUserId = User.Identity.GetUserId();
+            product.UserId = currentUserId;
+
             if (ModelState.IsValid)
             {
                 db.Products.Add(product);
@@ -71,7 +75,8 @@ namespace pruebaMvc01.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Product product = db.Products.Find(id);
-            if (product == null)
+            string currentUserId = User.Identity.GetUserId();
+            if ((product.UserId != currentUserId) || (product == null))
             {
                 return HttpNotFound();
             }
@@ -85,6 +90,8 @@ namespace pruebaMvc01.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ProductID,Description,Brand,Quantity,Price")] Product product)
         {
+            string currentUserId = User.Identity.GetUserId();
+            product.UserId = currentUserId;
             if (ModelState.IsValid)
             {
                 db.Entry(product).State = EntityState.Modified;
@@ -102,7 +109,8 @@ namespace pruebaMvc01.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Product product = db.Products.Find(id);
-            if (product == null)
+            string currentUserId = User.Identity.GetUserId();
+            if ((product.UserId != currentUserId) || (product == null))
             {
                 return HttpNotFound();
             }
