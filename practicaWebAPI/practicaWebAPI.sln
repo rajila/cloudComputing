@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "practicaWebAPI", "practicaWebAPI\practicaWebAPI.csproj", "{05893D48-52EA-4713-8841-69F57B88076D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliente", "Cliente\Cliente.csproj", "{3620C011-3682-42E4-9D4F-C12A073A331B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05893D48-52EA-4713-8841-69F57B88076D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05893D48-52EA-4713-8841-69F57B88076D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05893D48-52EA-4713-8841-69F57B88076D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05893D48-52EA-4713-8841-69F57B88076D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3620C011-3682-42E4-9D4F-C12A073A331B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3620C011-3682-42E4-9D4F-C12A073A331B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3620C011-3682-42E4-9D4F-C12A073A331B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3620C011-3682-42E4-9D4F-C12A073A331B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB68554D-0947-4C76-9DDE-D9D346D28AEE}
+	EndGlobalSection
+EndGlobal
